@@ -8,7 +8,6 @@ const initialState = {
 function rootReducer(state = initialState, action) {
 	switch(action.type){
 		case SET_PAGE: {
-			debugger
 			return Object.assign({}, state, {
 				currentPage: action.pageType
 			})
@@ -17,7 +16,6 @@ function rootReducer(state = initialState, action) {
 			return state
 		}
 	}
-	return state
 }
 
 export default rootReducer

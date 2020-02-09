@@ -1,0 +1,14 @@
+.inputForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input.error {
+	border: 2px solid #ff0606;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
