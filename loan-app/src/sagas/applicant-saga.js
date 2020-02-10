@@ -5,7 +5,7 @@ export default function* listenerSaga() {
 }
 
 const getApplicantApproval = async (applicantData) => {
-	const response = await fetch('/api/sendApplicantDataq2', {
+	const response = await fetch('/api/sendApplicantData', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
