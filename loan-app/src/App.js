@@ -1,12 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AppHub from './components/AppHub'
-import './App.css';
+import ApprovalPage from './components/ApprovalPage/ApprovalPage'
+import DeniedPage from './components/DeniedPage/DeniedPage'
 
 function App() {
   return (
-    <div className="App">
-      <AppHub />
-    </div>
+  	<Router>
+	    <Switch>
+	    	<Route exact path="/" component={AppHub} />
+	    	<Route path="/approved" component={ApprovalPage} />
+	    	<Route path="/denied" component={DeniedPage} />
+	    </Switch>
+    </Router>
   );
 }
 

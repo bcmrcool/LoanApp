@@ -20,7 +20,14 @@ function* getApplicantApproval(applicantData){
 function* workerSaga({ applicantData }) {
 	try {
 		const payload = yield call(getApplicantApproval, applicantData)
-		yield put({ type: "FETCH_SUCCESS", payload })
+		debugger
+		if (payload.result === "success"){
+			window.location = 'approved'
+		} else if (payload.error === "badRequest"){
+			yield put({ type: "SET_PAGE_LEVEL_ERROR_MESSAGE", message:payload.message })
+		} else {
+			window.location = 'denied'
+		}
 
 	} catch (e) {
 		yield put({ type: "FETCH_FAILED", e })

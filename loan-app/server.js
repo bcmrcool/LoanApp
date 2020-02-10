@@ -22,14 +22,22 @@ app.get('/api/getUsers', (req, res) => {
 });
 
 app.post('/api/sendApplicantData', (req, res) => {
+
+   if (req.body.autoPurchasePrice > 1000000){
+   	res.status(400)
+   	res.send({error: "badRequest", message: "The purchase price cannot exceed 1000000"})
+   }	
+   else {
    const getData = calculateResponse(req.body)
    getData
   .then(function (data) {
-  	res.send({ express: data });
+  	res.send(data);
   })
   .catch(function(error){
   	res.send({ express: error})
   })
+}
+
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
