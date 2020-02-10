@@ -4,15 +4,15 @@ export default function* listenerSaga() {
 	yield takeEvery("SEND_APPLICANT_DATA", workerSaga)
 }
 
-const getApplicantApproval = async (applicantData) => {
-	const response = await fetch('/api/sendApplicantData', {
+function* getApplicantApproval(applicantData){
+	const response = yield fetch('/api/sendApplicantData', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(applicantData)
     }); 
-	const approvalResponse = await response.json()
+	const approvalResponse = yield response.json()
 
 	return approvalResponse
 }
