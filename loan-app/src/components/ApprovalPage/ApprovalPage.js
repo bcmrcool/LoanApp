@@ -47,10 +47,11 @@ class ApprovalPage extends React.Component {
 	}
 
 	render(){
+		const { created } = this.state
 		return (
 			<div>
 				{this.headerText()}
-				<form className="form" onSubmit={this.handleSubmit}>
+				{!created && <form className="form" onSubmit={this.handleSubmit}>
 					<div className="formColumn">
 						<span>Your User Name (email)</span>
 						<span>Password </span> 
@@ -67,7 +68,7 @@ class ApprovalPage extends React.Component {
 						<span></span>
 						<span></span>
 					</div>
-				</form>
+				</form>}
 			</div>
 		)
 	}

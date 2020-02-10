@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { sendApplicantData } from '../actions/index'
 import InputForm from './InputForm/InputForm'
+import { marketingText } from '../constants/strings'
+import './AppHub.css'
 
 
 class AppHub extends React.Component {
@@ -10,8 +12,10 @@ class AppHub extends React.Component {
 		const { sendApplicantData, pageLevelErrorMessage } = this.props
 		debugger
 		return (
-			<div>
-				{pageLevelErrorMessage && <div>{pageLevelErrorMessage}</div>}
+			<div className='mainContent'>
+				<h3>Pre Qualify Loan Application Form</h3>
+				{pageLevelErrorMessage && <div>Error: {pageLevelErrorMessage}</div>}
+				<div style={{'font-size': '14px', width: '70%'}}>{marketingText}</div>
 				<InputForm sendData={sendApplicantData} />
 			</div>
 		)

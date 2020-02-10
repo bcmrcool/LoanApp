@@ -18,11 +18,10 @@ class InputForm extends React.Component {
 
 	validateInput = (event) => {
 		let { errors } = this.state
-		if (event.type == 'blur' || event.target.value >= 300) {
+		if (event.type === 'blur' || event.target.value >= 300) {
 			const currentFieldValue = event.target.value
 			const fieldRegExp = RegExp(event.target.pattern)
 			const isValidInput = fieldRegExp.test(currentFieldValue)
-			let currentErrors = errors
 			errors[event.target.id] = !isValidInput
 			this.setState({ errors })
 		}

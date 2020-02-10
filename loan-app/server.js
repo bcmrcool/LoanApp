@@ -11,7 +11,7 @@ function calculateResponse(sendApplicantData){
 	const { autoPurchasePrice, userIncome, creditScore } = sendApplicantData
 	return new Promise((resolve, reject) => {
 		if ((autoPurchasePrice > (userIncome/5)) || creditScore < 600) {
-			resolve({ result: "fail", disqualMsg: "You're disqualified." })
+			resolve({ result: "fail", disqualMsg: "You're disqualified. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem nisi, convallis eget consequat eu, molestie nec libero. Cras vitae." })
 		} else {
 			resolve({ result: "success" })
 		}

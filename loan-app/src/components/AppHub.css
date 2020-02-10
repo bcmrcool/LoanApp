@@ -1,0 +1,8 @@
+.mainContent {
+	display: flex;
+	margin-left: 30px;
+	margin-right: 30px;
+	flex-direction: column;
+	height: 100vh;
+	background-color: white;
+}

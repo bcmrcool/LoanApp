@@ -10,7 +10,7 @@ function App() {
 	    <Switch>
 	    	<Route exact path="/" component={AppHub} />
 	    	<Route path="/approved" component={ApprovalPage} />
-	    	<Route path="/denied" component={DeniedPage} />
+	    	<Route path="/denied/:message" component={DeniedPage} />
 	    </Switch>
     </Router>
   );

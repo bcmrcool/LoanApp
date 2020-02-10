@@ -26,7 +26,7 @@ function* workerSaga({ applicantData }) {
 		} else if (payload.error === "badRequest"){
 			yield put({ type: "SET_PAGE_LEVEL_ERROR_MESSAGE", message:payload.message })
 		} else {
-			window.location = 'denied'
+			window.location = 'denied/' + payload.disqualMsg
 		}
 
 	} catch (e) {
