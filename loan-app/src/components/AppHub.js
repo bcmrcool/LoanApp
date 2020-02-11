@@ -13,8 +13,8 @@ class AppHub extends React.Component {
 		debugger
 		return (
 			<div className='mainContent'>
+				{pageLevelErrorMessage && <div style={{'color':'red'}}>Error: {pageLevelErrorMessage}</div>}
 				<h3>Pre Qualify Loan Application Form</h3>
-				{pageLevelErrorMessage && <div>Error: {pageLevelErrorMessage}</div>}
 				<div style={{'font-size': '14px', width: '70%'}}>{marketingText}</div>
 				<InputForm sendData={sendApplicantData} />
 			</div>

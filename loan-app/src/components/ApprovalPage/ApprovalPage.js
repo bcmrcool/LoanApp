@@ -50,6 +50,7 @@ class ApprovalPage extends React.Component {
 		const { created } = this.state
 		return (
 			<div>
+				<h3 style={{"font-weight":"bold"}}>Congratulations, you're approved!</h3>
 				{this.headerText()}
 				{!created && <form className="form" onSubmit={this.handleSubmit}>
 					<div className="formColumn">
